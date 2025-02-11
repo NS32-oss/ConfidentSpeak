@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const AnalysisPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-blue-950 flex flex-col items-center justify-center px-6 py-16">
       {/* Page Title */}
@@ -11,7 +14,10 @@ const AnalysisPage = () => {
       {/* Three Analysis Options */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
         {/* Video Analysis */}
-        <div className="bg-blue-900 hover:bg-blue-800 transition-all text-white rounded-xl p-10 flex flex-col items-center shadow-lg">
+        <div
+          className="bg-blue-900 hover:bg-blue-800 transition-all text-white rounded-xl p-10 flex flex-col items-center shadow-lg"
+          onClick={() => navigate("/video")}
+        >
           <img src="src/assets/practice/icons8-video-50.png" alt="Video Analysis" className="w-16 h-16 mb-4" />
           <h3 className="text-2xl font-medium">Video Analysis</h3>
           <p className="text-gray-300 text-center mt-2">
@@ -20,7 +26,10 @@ const AnalysisPage = () => {
         </div>
 
         {/* Audio Analysis */}
-        <div className="bg-blue-900 hover:bg-blue-800 transition-all text-white rounded-xl p-10 flex flex-col items-center shadow-lg">
+        <div
+          className="bg-blue-900 hover:bg-blue-800 transition-all text-white rounded-xl p-10 flex flex-col items-center shadow-lg"
+          onClick={() => navigate("/audio")}
+        >
           <img src="src/assets/practice/icons8-audio-50.png" alt="Audio Analysis" className="w-16 h-16 mb-4" />
           <h3 className="text-2xl font-medium">Audio Analysis</h3>
           <p className="text-gray-300 text-center mt-2">
@@ -29,7 +38,10 @@ const AnalysisPage = () => {
         </div>
 
         {/* Text Analysis */}
-        <div className="bg-blue-900 hover:bg-blue-800 transition-all text-white rounded-xl p-10 flex flex-col items-center shadow-lg">
+        <div
+          className="bg-blue-900 hover:bg-blue-800 transition-all text-white rounded-xl p-10 flex flex-col items-center shadow-lg"
+          onClick={() => navigate("/text")}
+        >
           <img src="src/assets/practice/icons8-text-50.png" alt="Text Analysis" className="w-16 h-16 mb-4" />
           <h3 className="text-2xl font-medium">Text Analysis</h3>
           <p className="text-gray-300 text-center mt-2">

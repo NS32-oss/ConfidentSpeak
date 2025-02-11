@@ -10,9 +10,9 @@ const navigation = [
     { name: "Home", href: "/", current: true },
     { name: "Services", href: "#services", current: false },
     { name: "About", href: "#about", current: false },
-    { name: "Practice", href: "/interview", current: false },
+    { name: "Practice", href: "/practice ", current: false },
     { name: "Chat", href: "", current: false },
-    { name: "Games", href: "", current: false },
+    { name: "Games", href: "/games", current: false },
 ];
 
 function classNames(...classes) {
@@ -43,7 +43,7 @@ const Navbar = () => {
                                     {navigation.map((item) => (
                                         <Link
                                             key={item.name}
-                                            to={item.href}
+                                            to={item.href} 
                                             className={classNames(
                                                 item.current
                                                     ? "text-black hover:opacity-100"
