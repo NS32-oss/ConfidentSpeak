@@ -4,22 +4,26 @@ import { Link } from "react-router-dom";
 const games = [
   {
     title: "Word Explorer",
-    description: "Enter a word and get its definition, pronunciation, antonyms, and example sentences.",
+    description:
+      "Enter a word and get its definition, pronunciation, antonyms, and example sentences.",
     path: "/word-explorer",
   },
   {
     title: "Definition Quiz",
-    description: "Test your knowledge with a quiz of 10-15 word definitions. Choose the right answer!",
+    description:
+      "Test your knowledge with a quiz of 10-15 word definitions. Choose the right answer!",
     path: "/definition-quiz",
   },
   {
     title: "Pronunciation Check",
-    description: "Practice and improve your pronunciation by speaking words correctly.",
+    description:
+      "Practice and improve your pronunciation by speaking words correctly.",
     path: "/pronunciation-check",
   },
   {
     title: "Speaking Challenge",
-    description: "Talk for 30 seconds about a given topic and get AI feedback on clarity and fluency.",
+    description:
+      "Talk for 30 seconds about a given topic and get AI feedback on clarity and fluency.",
     path: "/speaking-challenge",
   },
 ];
@@ -37,7 +41,9 @@ const GamesPage = () => {
             key={index}
             className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all"
           >
-            <h2 className="text-2xl font-semibold text-gray-900 mb-3">{game.title}</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-3">
+              {game.title}
+            </h2>
             <p className="text-gray-700">{game.description}</p>
             <Link
               to={game.path}
