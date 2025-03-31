@@ -14,7 +14,7 @@ const PronunciationCheck = () => {
     fetch("/api/reference-text")
       .then((res) => res.json())
       .then((data) => setReferenceText(data.referenceText))
-      .catch((error) => console.error("Error fetching reference text:", error));
+      .catch((error) => console.error("ERROR fetching reference text:", error));
   }, []);
 
   // Start recording

@@ -28,7 +28,12 @@ app.post("/predict", upload.single("audio"), async (req, res) => {
             return res.status(500).json({ error: stderr });
         }
         // Get the last non-empty line from stdout
-        const emotion = stdout.trim().split("\n").filter(line => line.trim() !== "").pop();
+        let emotion = stdout.trim().split("\n").filter(line => line.trim() !== "").pop();
+        
+        // Replace "sad" with "neutral"
+        if (emotion === "sad"||emotion==="surprise") {
+            emotion = "neutral";
+        }
         res.json({ emotion });
     });
 });
