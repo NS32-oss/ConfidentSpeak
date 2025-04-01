@@ -2,6 +2,7 @@ import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { ClerkProvider } from "@clerk/clerk-react";
 import AudioAnalysis from "./components/AudioAnalysis";
+import VideoAnalysis from "./components/VideoAnalysis";
 import Banner from "./components/banner/Banner";
 import Navbar from "./components/navbar/Navbar";
 import Companies from "./components/companies/Companies";
@@ -21,6 +22,10 @@ import PronunciationCheck from "./components/games/Game3";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
+if (!PUBLISHABLE_KEY) {
+  console.error('Missing Publishable Key');
+}
+
 function App() {
   return (
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
@@ -30,7 +35,7 @@ function App() {
             <Route
               path="/"
               element={
-                <>
+                <div>
                   <Navbar />
                   <Banner />
                   <Companies />
@@ -40,19 +45,18 @@ function App() {
                   <Clientsay />
                   <Newsletter />
                   <Footer />
-                </>
+                </div>
               }
             />
             <Route path="/games" element={<GamesPage />} />
             <Route path="/practice" element={<AnalysisPage />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/signin" element={<Signin />} />
-            {/* <Route path="/video" element={<VideoAnalysis />} /> */}
+            <Route path="/video" element={<VideoAnalysis />} />
             <Route path="/audio" element={<AudioAnalysis />} />
-            {/* <Route path="/text" element={<TextAnalysis />} /> */}
             <Route path="/word-explorer" element={<WordExplorer />} />
             <Route path="/pronunciation-check" element={<PronunciationCheck />} />            
-            <Route path="/definition-quiz" element={<DefinitionQuiz />} /> {/* Add the new route */}
+            <Route path="/definition-quiz" element={<DefinitionQuiz />} />
           </Routes>
         </div>
       </Router>
